@@ -155,7 +155,11 @@ inside WSL, `cmd.exe`, or PowerShell. If an action uses `code`, `wt.exe`, or
 ```bash
 powershell.exe -NoProfile -Command '$msbuild = "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe"; & $msbuild "C:\Projects\WinLaunch\WinLaunch.sln" /t:Restore /p:RestorePackagesConfig=true /p:Configuration=Debug /p:Platform=x86'
 
+# Debug
 powershell.exe -NoProfile -Command '$msbuild = "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe"; & $msbuild "C:\Projects\WinLaunch\WinLaunch.sln" /t:Build /p:Configuration=Debug /p:Platform=x86 /m'
+
+# Release
+powershell.exe -NoProfile -Command '$msbuild = "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe"; & $msbuild "C:\Projects\WinLaunch\WinLaunch.sln" /t:Build /p:Configuration=Release /p:Platform=x86 /m'
 
 powershell.exe -NoProfile -Command 'Start-Process "C:\Projects\WinLaunch\WinLaunch\bin\Debug\WinLaunch.exe"'
 ```

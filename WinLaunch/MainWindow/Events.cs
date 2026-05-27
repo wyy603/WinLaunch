@@ -85,7 +85,20 @@ namespace WinLaunch
 
             try
             {
-                action.Execute(item);
+                if (!Settings.CurrentSettings.DeskMode)
+                {
+                    StartLaunchAnimations(item);
+                    LaunchedItem = item;
+                }
+
+                new Thread(new ThreadStart(() =>
+                {
+                    try
+                    {
+                        action.Execute(item);
+                    }
+                    catch { }
+                })).Start();
             }
             catch { }
         }

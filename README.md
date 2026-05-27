@@ -21,7 +21,19 @@ menu is enough.
 
 ### File Format
 
-The JSON file must contain an array of action objects:
+The JSON file must contain an array of action objects. This should work:
+
+```json
+[
+  {
+    "title": "Show Target in Explorer",
+    "command": "explorer.exe",
+    "arguments": "/select,\"{targetPath}\""
+  }
+]
+```
+
+Try these examples if you have corresponding apps:
 
 ```json
 [
@@ -54,8 +66,6 @@ The JSON file must contain an array of action objects:
   }
 ]
 ```
-
-
 
 ### Fields
 
